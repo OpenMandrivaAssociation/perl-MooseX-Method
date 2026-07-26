@@ -1,15 +1,13 @@
 %define upstream_name    MooseX-Method
-%define upstream_version 0.44
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.44
+Release:	6
 
 Summary:	Method declaration with type checking
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/MooseX-Method
-Source0:	https://cpan.metacpan.org/authors/id/G/GP/GPHAT/MooseX-Method-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/G/GP/GPHAT/MooseX-Method-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -40,7 +38,7 @@ The problem
       }
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -61,9 +59,7 @@ make test
 %changelog
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.440.0-1mdv2010.0
 + Revision: 405945
-- rebuild using %%perl_convert_version
-
-* Wed Jul 01 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.44-1mdv2010.0
+- rebuild using %0.44 Wed Jul 01 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.44-1mdv2010.0
 + Revision: 391186
 - update to new version 0.44
 
